@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com HTML, CSS e JS</title>
+    <style>
+        /* Estilos CSS para o formulário */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #resumo {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="meuFormulario">
+        <input type="text" id="nome" placeholder="Nome">
+        <input type="text" id="email" placeholder="Email">
+        <textarea id="mensagem" placeholder="Mensagem"></textarea>
+        <input id="enviar" type="submit" value="Enviar">
+    </form>
+
+    <div id="resumo"></div>
+
+    <script>
+        // Acesso aos elementos do formulário
+        var formulario = document.getElementById("meuFormulario");
+        var inputNome = document.getElementById("nome");
+        var inputEmail = document.getElementById("email");
+        var textareaMensagem = document.getElementById("mensagem");
+        var botaoEnviar = document.querySelector("#enviar");
+        var divResumo = document.getElementById("resumo");
+
+        // Adicionando um evento de envio ao formulário
+        formulario.addEventListener("submit", function (event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+
+            if (!validarEmail(inputEmail.value)) {
+                console.log("Email inválido");
+                return;
+            }
+
+            // Construir e exibir o resumo
+            constuirResumo();
+
+            // Limpar campos do formulário
+            limparCampos();
+
+            alert("Formulário enviado! Verifique o resumo abaixo.");
+        });
+
+        // Função para validar o email
+        function validarEmail(email) {
+            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        // Função para construir e exibir o resumo
+        function constuirResumo() {
+            var resumoHTML = "<h2>Resumo do Formulário</h2>";
+            resumoHTML += "<p><strong>Nome:</strong> " + inputNome.value + "</p>";
+            resumoHTML += "<p><strong>Email:</strong> " + inputEmail.value + "</p>";
+            resumoHTML += "<p><strong>Mensagem:</strong> " + textareaMensagem.value + "</p>";
+
+            divResumo.innerHTML = resumoHTML;
+        }
+
+        // Função para limpar os campos do formulário
+        function limparCampos() {
+            inputNome.value = "";
+            inputEmail.value = "";
+            textareaMensagem.value = "";
+        }
+    </script>
+
+</body>
+
+</html>

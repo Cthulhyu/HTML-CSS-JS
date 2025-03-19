@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Variáveis com Escopo de Bloco em JavaScript</title>
+    <script>
+
+        function dobrar(numero) {
+            numero = numero * 2;
+            console.log("Dentro da função: ", numero);
+        }
+
+        let valor = 5;
+        console.log("Antes de chamar a função: ", valor);
+        dobrar(valor);
+        console.log("Depois de chamar a função: ", valor);
+
+    </script>
+</head>
+
+<body>
+    <!-- Conteúdo HTML -->
+</body>
+
+</html>

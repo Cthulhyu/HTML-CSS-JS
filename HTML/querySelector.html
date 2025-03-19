@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo document.querySelector</title>
+</head>
+<body>
+
+<button id="botao1">Botão 1</button>
+<button id="botao2">Botão 2</button>
+<button id="botao3">Botão 3</button>
+
+<script>
+    // Seleciona todos os elementos de botão usando document.querySelector
+    var botao1 = document.querySelector("#botao1");
+    var botao2 = document.querySelector("#botao2");
+    var botao3 = document.querySelector("#botao3");
+
+    // Adiciona um evento de clique a cada botão
+    botao1.addEventListener("click", function() {
+        alert("Botão 1 clicado!");
+    });
+
+    botao2.addEventListener("click", function() {
+        alert("Botão 2 clicado!");
+    });
+
+    botao3.addEventListener("click", function() {
+        alert("Botão 3 clicado!");
+    });
+</script>
+
+</body>
+</html>

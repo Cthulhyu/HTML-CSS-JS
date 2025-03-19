@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo getElementsByClassName com Botão</title>
+    <style>
+        .destacado {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="destacado">Parágrafo 1</p>
+    <p>Parágrafo 2</p>
+    <p class="destacado">Parágrafo 3</p>
+
+    <button onclick="destacarParagrafos()">Destacar Parágrafos</button>
+
+    <script>
+        function destacarParagrafos() {
+            // Seleciona todos os elementos com a classe "destacado"
+            let paragrafosDestacados = document.getElementsByClassName("destacado");
+
+            // Itera sobre os parágrafos destacados e altera seu estilo
+            for (let i = 0; i < paragrafosDestacados.length; i++) {
+                paragrafosDestacados[i].style.color = "red";
+                paragrafosDestacados[i].style.fontWeight = "normal";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

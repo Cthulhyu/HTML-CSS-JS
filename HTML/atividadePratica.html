@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com HTML, CSS e JS</title>
+    <style>
+        /* Estilos CSS para o formulário */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="meuFormulario">
+        <input type="text" id="nome" placeholder="Nome">
+        <input type="text" id="email" placeholder="Email">
+        <textarea id="mensagem" placeholder="Mensagem"></textarea>
+        <input id="enviar" type="submit" value="Enviar">
+    </form>
+
+    <script>
+        // Acesso aos elementos do formulário
+        var formulario = document.getElementById("meuFormulario");
+        var inputNome = document.getElementById("nome");
+        var inputEmail = document.getElementById("email");
+        var textareaMensagem = document.getElementById("mensagem");
+        var botaoEnviar = document.querySelector("#enviar");
+
+        // Adicionando um evento de envio ao formulário
+        formulario.addEventListener("submit", function (event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+            // Exibe os valores inseridos nos campos do formulário
+
+            if (!validarEmail(inputEmail.value)) {
+                console.log("Email invalido");
+            }
+            constuirFormularioSaida();
+
+            alert("Formulário enviado! Verifique o console para os dados inseridos.");
+        });
+
+
+        function validarEmail(email) {
+            // Expressão regular para validar o formato do e-mail
+            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+            /*
+            Nesta função, usamos uma expressão regular para verificar se o e-mail fornecido 
+            tem um formato válido. A expressão regular ^[^\s@]+@[^\s@]+\.[^\s@]+$ valida se 
+            o e-mail contém caracteres antes e depois do símbolo '@', além de verificar se há 
+            um ponto (.) seguido por caracteres após o símbolo '@'.
+            */
+        }
+
+        
+    </script>
+
+</body>
+
+</html>

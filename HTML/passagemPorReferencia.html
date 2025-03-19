@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de passagem por referência em JavaScript</title>
+    <script>
+
+        function modificarArray(arr) {
+            arr.push(4); // Adiciona um elemento ao array
+            arr[0] = 100; // Modifica o primeiro elemento do array
+        }
+
+        let meuArray = [1, 2, 3];
+        console.log("Antes de chamar a função:", meuArray); // Saída: Antes de chamar a função: [1, 2, 3]
+
+        modificarArray(meuArray);
+        console.log("Depois de chamar a função:", meuArray); // Saída: Depois de chamar a função: [100, 2, 3, 4]
+
+    </script>
+</head>
+
+<body>
+    <!-- Conteúdo HTML -->
+</body>
+
+</html>

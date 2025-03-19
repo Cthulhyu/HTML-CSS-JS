@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" >
+    <title>Exemplo getElementsByTagName</title>
+
+</head>
+
+<body>
+    <div>
+        <h1>Título 1</h1>
+        <p>Parágrafo 1</p>
+    </div>
+    <div>
+        <h2>Título 2</h2>
+        <p>Parágrafo 2</p>
+    </div>
+    <script>
+
+        // Seleciona todos os elementos <p> do documento
+        let paragrafos = document.getElementsByTagName("p");
+
+        // Itera sobre a lista de parágrafos e altera o texto
+        for (let i = 0; i < paragrafos.length; i++) {
+            paragrafos[i].textContent = "Novo texto do parágrafo " + (i + 1);
+        }
+        
+
+    </script>
+</body>
+
+</html>

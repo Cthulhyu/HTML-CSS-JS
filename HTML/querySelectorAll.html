@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo document.querySelectorAll</title>
+</head>
+<body>
+
+<button class="botao">Botão 1</button>
+<button class="botao">Botão 2</button>
+<button class="botao">Botão 3</button>
+
+<script>
+    // Seleciona todos os elementos de botão usando document.querySelectorAll
+    var botoes = document.querySelectorAll(".botao");
+
+    // Adiciona um evento de clique a cada botão
+    botoes.forEach(function(botao) {
+        botao.addEventListener("click", function() {
+            alert("Botão " + this.textContent + " clicado!");
+        });
+    });
+</script>
+
+</body>
+</html>
