@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Variáveis com Escopo de Bloco em JavaScript</title>
+    <script>
+        function capitalizarPalavras(str, excecoes) {
+            var palavras = str.split(" "); 
+            for (var i = 0; i < palavras.length; i++) {
+                var palavra = palavras[i];
+                
+                if (excecoes.indexOf(palavra.toLowerCase()) === -1) {
+                    
+                    palavras[i] = palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
+                }
+            }
+          
+            return palavras.join(" ");
+        }
+
+        // Testando a função
+        var str = "este é um exemplo de frase em minúsculas";
+        var excecoes = ["é", "em"]; // Palavras que não devem ser capitalizadas
+        var resultado = capitalizarPalavras(str, excecoes);
+        console.log(resultado);
+    </script>
+</head>
+
+<body>
+    <!-- Conteúdo HTML -->
+   
+</body>
+
+</html>
+
+ <!-- 
+Dada a função "capitalizarPalavras(str, excecoes)" em JS, implemente:
+
+a) Explique o funcionamento da função, comentando cada linha. 
+
+b) Modifique a função para retornar apenas a primeira letra da string minúsculas e o restante da palavra em maiúsculas.
+
+Ex. eSTE é uM eXEMPLO dE fRASE em mINÚSCULAS.
+
+C)Modifique a função para retornar apenas a palavra "exemplo" em minúsculas e o restante em maiúsculas.
+
+D) Modifique a função para subsituir a palavra "frase" por "texto" usando o método replace().
+
+ -->

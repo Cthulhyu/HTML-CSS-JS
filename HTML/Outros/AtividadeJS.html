@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AtividadeJS</title>
+</head>
+<body>
+    <script>
+        let pessoa = {
+            nome: "João",
+            idade: 25,
+            profissao: "Desenvolvedor"
+        };
+
+        console.log("Nome:", pessoa.nome);
+        console.log("Idade:", pessoa.idade);
+        pessoa.cidade = "Brasília";
+        pessoa.profissao = "Engenheiro de Computação";
+
+        for (let propriedade in pessoa) {
+            console.log(`${propriedade}: ${pessoa[propriedade]}`);
+        }
+
+        delete pessoa.idade;
+        console.log("Após remover idade:", pessoa);
+
+        let carro = {
+            marca: "Toyota",
+            modelo: "Corolla",
+            ano: 2020
+        };
+
+        let proprietario = {
+            nome: "Maria",
+            idade: 30
+        };
+
+        carro.proprietario = proprietario;
+        console.log("Nome do proprietário do carro:", carro.proprietario.nome);
+
+        if (!carro.hasOwnProperty("cor")) {
+            carro.cor = "prata";
+        }
+        console.log("Carro com propriedade cor:", carro);
+        function Animal(nome, especie) {
+            this.nome = nome;
+            this.especie = especie;
+        }
+
+        let animal1 = new Animal("Luna", "Gato");
+        let animal2 = new Animal("Rex", "Cachorro");
+        console.log("Animal 1:", animal1);
+        console.log("Animal 2:", animal2);
+
+    </script>
+</body>
+</html>
