@@ -1,0 +1,29 @@
+ .arroz{
+    background:black;
+ }
+h1{
+    color:darkgreen;
+    font-size: 90px;
+    padding: 30px;
+    text-align:center;
+ }
+h2{
+    font-size: 40px;
+    color:darkred;
+    text-align: center;
+}
+p{
+    font-size: larger;
+    color:white;
+}
+div{
+    padding-left: 5px;
+    text-align:left;
+    border-radius: 5px;
+    border-width: 10px;
+    border-style:double;
+    border-color:forestgreen;
+    margin-bottom: 20px;
+}
+
+
